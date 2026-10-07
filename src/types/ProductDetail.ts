@@ -22,5 +22,5 @@ export interface ProductDetail {
     dir: "up" | "down" | "flat";
     pct: number;
   };
-  market: MarketType[];
+  markets: MarketType[];
 }

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import NavItems from "./NavItems";
 
 const DataPromise = async () => {
@@ -20,7 +21,9 @@ const Navlinks = async () => {
   const data = await DataPromise();
   return (
     <div className="container mx-auto flex flex-wrap justify-start items-center py-2 border-t border-black/10 text-white">
-      <NavItems data={data} />
+      <Suspense fallback={null}>
+        <NavItems data={data} />
+      </Suspense>
     </div>
   );
 };

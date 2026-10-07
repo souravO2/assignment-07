@@ -1,9 +1,10 @@
 import { ProductDetail } from "@/types/ProductDetail";
+import Link from "next/link";
 import React from "react";
 
 const ProductCard = ({ data }: { data: ProductDetail }) => {
   return (
-    <div className="p-4 rounded-2xl bg-white flex flex-col gap-y-2 mx-4">
+    <Link href={`/products/${data.id}`} className="p-4 rounded-2xl bg-white flex flex-col gap-y-2 mx-4">
       <div className="flex items-center gap-2">
         <span className="bg-green-50 p-2 rounded-2xl text-4xl">
           {data.image}
@@ -37,7 +38,7 @@ const ProductCard = ({ data }: { data: ProductDetail }) => {
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
