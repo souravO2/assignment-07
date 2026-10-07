@@ -24,7 +24,7 @@ const PriceUp = async () => {
   const topSix = priceUp
     .sort((a, b) => b.change.pct - a.change.pct)
     .slice(0, 6);
-  console.log(topSix);
+  // console.log(topSix);
   return (
     <div className="container mx-auto p-2">
       <h1 className="text-2xl font-bold">🔺 আজ দাম বেড়েছে</h1>

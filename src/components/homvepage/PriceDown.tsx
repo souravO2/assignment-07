@@ -25,7 +25,7 @@ const PriceDown = async () => {
     0,
     6,
   );
-  console.log(topSix);
+  // console.log(topSix);
   return (
     <div className="container mx-auto p-2">
       <h1 className="text-2xl font-bold"><span className="text-green-700">▼</span> আজ দাম কমেছে</h1>
