@@ -1,7 +1,11 @@
 import { ProductDetail } from "@/types/ProductDetail";
+import { notFound } from "next/navigation";
 import React from "react";
 
 const ProductDetailCard = ({ data }: { data: ProductDetail }) => {
+  if (!data?.markets || data.markets.length === 0) {
+    notFound();
+  }
   const minimum = Math.min(...data.markets.map((item) => item.min));
   const maximum = Math.max(...data.markets.map((item) => item.max));
 
@@ -111,7 +115,10 @@ const ProductDetailCard = ({ data }: { data: ProductDetail }) => {
                 </td>
               </tr>
               {data.markets.map((item, id) => (
-                <tr key={id} className="odd:bg-green-50 even:bg-white">
+                <tr
+                  key={id}
+                  className="odd:bg-green-50 even:bg-white hover:bg-green-100"
+                >
                   <td className="font-semibold px-2 text-left">
                     {item.market}
                   </td>

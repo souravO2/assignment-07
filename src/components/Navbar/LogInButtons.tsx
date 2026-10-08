@@ -6,6 +6,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RxAvatar } from "react-icons/rx";
+import { toast } from "sonner";
 
 const LogInButtons = () => {
   const { data: session, isPending } = useSession();
@@ -17,7 +18,9 @@ const LogInButtons = () => {
     );
   }
   const handleSignOutBtn = async () => {
-    (await signOut(), redirect("/"));
+    await signOut();
+    toast.success("Successfully Logged Out.");
+    redirect("/");
   };
   return (
     <div className="flex flex-col md:flex-row shrink-0 text-right gap-1 md:gap-2">

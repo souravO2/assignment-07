@@ -21,6 +21,7 @@ const SignUpPage = () => {
       callbackURL: "/",
     });
     // console.log(resData, error);
+    toast.success("Account Created.");
     if (data) {
       redirect("/");
     }

@@ -19,7 +19,8 @@ const SignInPage = () => {
       rememberMe: true,
       callbackURL: "/",
     });
-    console.log(resData, error);
+    // console.log(resData, error);
+    toast.success("Successfully Logged In.");
     if (error) {
       toast.error(error.message);
     }

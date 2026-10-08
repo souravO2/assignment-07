@@ -5,6 +5,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import React from "react";
 import { RxAvatar } from "react-icons/rx";
+import { toast } from "sonner";
 
 const ProfilePage = () => {
   const { data, isPending } = useSession();
@@ -26,7 +27,9 @@ const ProfilePage = () => {
     return resData;
   };
   const handleSignOutBtn = async () => {
-    (await signOut(), redirect("/"));
+    await signOut();
+    toast.success("Successfully Logged Out.");
+    redirect("/");
   };
   return (
     <div className="max-w-4xl mx-auto w-full m-4 flex flex-col gap-y-4">

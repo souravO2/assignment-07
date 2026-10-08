@@ -1,5 +1,6 @@
 import Image from "next/image";
 import DateDisplay from "../Navbar/DateDisplay";
+import BrowseButton from "./BrowseButton";
 
 const Hero = () => {
   return (
@@ -20,10 +21,7 @@ const Hero = () => {
               চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক
               বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।
             </p>
-
-            <button className="btn rounded-xl border-0 bg-green-700 px-6 text-white shadow-sm hover:bg-green-800">
-              সব পণ্য দেখুন
-            </button>
+            <BrowseButton />
           </div>
 
           {/* Image */}
