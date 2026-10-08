@@ -90,7 +90,7 @@ const ProductDetailCard = ({ data }: { data: ProductDetail }) => {
           </span>
         </div>
         {/* Table */}
-        <div className="rounded-2xl border border-slate-200 overflow-hidden">
+        <div className="rounded-2xl border border-slate-200 overflow-hidden overflow-x-auto">
           <table className="w-full border-collapse">
             <tbody className="divide-y divide-slate-300">
               <tr>
