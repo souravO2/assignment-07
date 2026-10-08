@@ -18,11 +18,11 @@ const SignUpPage = () => {
       name: data.name as string,
       email: data.email as string,
       password: data.password as string,
-      callbackURL: "/signin",
+      callbackURL: "/",
     });
     // console.log(resData, error);
     if (data) {
-      redirect("/signin");
+      redirect("/");
     }
     if (error) {
       toast.error(error.message);
