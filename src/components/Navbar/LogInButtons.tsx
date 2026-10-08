@@ -48,7 +48,7 @@ const LogInButtons = () => {
               <Link href={"/profile"}>👤 আমার প্রোফাইল</Link>
             </li>
             <li>
-              <button onClick={handleSignOutBtn} className="text-red-700">
+              <button onClick={handleSignOutBtn} className="text-red-700 font-semibold">
                 ↩ সাইন আউট
               </button>
             </li>

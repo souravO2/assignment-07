@@ -6,7 +6,7 @@ const ProductCard = ({ data }: { data: ProductDetail }) => {
   return (
     <Link
       href={`/products/${data.id}`}
-      className="p-4 rounded-2xl bg-white flex flex-col gap-y-2 mx-4 border border-slate-200 group"
+      className="p-4 rounded-2xl bg-white flex flex-col gap-y-2 mx-4 border border-slate-200 group hover:border-green-700/70"
     >
       <div className="flex items-center gap-2">
         <span className="bg-green-50 p-2 rounded-2xl text-4xl border border-gray-200">
