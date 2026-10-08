@@ -1,7 +1,6 @@
-import ProductCard from "@/components/shared/ProductCard";
 import { ProductDetail } from "@/types/ProductDetail";
 import { notFound } from "next/navigation";
-import React from "react";
+import SortingCategoryData from "./SortingCategoryData";
 
 const CategoryContent = async ({
   params,
@@ -36,16 +35,7 @@ const CategoryContent = async ({
           </span>
         </div>
       </div>
-      <div className="bg-white rounded-2xl">
-        <p className="m-4">
-          মোট {data.length.toLocaleString("bn-BD")}টি পণ্য দেখানো হচ্ছে
-        </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-4">
-        {data.map((item) => (
-          <ProductCard key={item.id} data={item} />
-        ))}
-      </div>
+      <SortingCategoryData data={data} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import CategoryContent from "@/components/shared/CategoryContent";
+import CategoryContent from "@/components/categoryPage/CategoryContent";
 import { Suspense } from "react";
 
 const CategoryPage = ({
