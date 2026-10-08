@@ -11,9 +11,9 @@ const ProductDetailCard = ({ data }: { data: ProductDetail }) => {
 
   return (
     <div className="container mx-auto flex flex-col gap-y-4 my-4">
-      <div className="flex justify-between items-center bg-white p-4 rounded-2xl mx-2 md:mx-0">
+      <div className="flex justify-between items-center bg-white border border-gray-200 p-4 rounded-2xl mx-2 md:mx-0">
         <div className="flex flex-col md:flex-row items-left md:items-center gap-2">
-          <span className="bg-green-50 p-2 rounded-2xl text-6xl w-fit">
+          <span className="bg-green-50 border border-gray-200 p-2 rounded-2xl text-6xl w-fit">
             {data.image}
           </span>
           <div>
@@ -60,7 +60,7 @@ const ProductDetailCard = ({ data }: { data: ProductDetail }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-y-4 rounded-2xl border border-gray-100 bg-white py-2 px-1 md:p-4 shadow-xl mx-1 md:mx-0 text-center md:text-left">
+      <div className="flex flex-col gap-y-4 rounded-2xl border border-gray-200 bg-white py-2 px-1 md:p-4 shadow-xl mx-1 md:mx-0 text-center md:text-left">
         <h1 className="text-xl font-semibold mt-2">দামের সারসংক্ষেপ</h1>
         <div className="flex justify-between gap-2 md:gap-4 text-center">
           <div className="border rounded-2xl border-gray-200 w-full p-4">

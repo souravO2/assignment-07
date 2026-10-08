@@ -33,11 +33,11 @@ const ProfilePage = () => {
   };
   return (
     <div className="max-w-4xl mx-auto w-full m-4 flex flex-col gap-y-4">
-      <div className="my-4 mx-2">
+      <div className="my-4 mx-2 text-center">
         <h1 className="text-2xl font-bold">আমার প্রোফাইল</h1>
         <p>আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।</p>
       </div>
-      <div className="flex justify-between items-center bg-white rounded-2xl p-4 mx-2">
+      <div className="flex justify-between items-center bg-white border border-gray-200 rounded-2xl p-4 mx-2">
         <div className="flex gap-2 items-center">
           {data?.user.image ? (
             <Image
@@ -64,7 +64,7 @@ const ProfilePage = () => {
           </button>
         </div>
       </div>
-      <div className="bg-white rounded-2xl p-4 mx-2">
+      <div className="bg-white rounded-2xl border border-gray-200 p-4 mx-2">
         <h1 className="text-xl font-semibold">তথ্য</h1>
         <form className="" onSubmit={handleUpdateUser}>
           <fieldset className="fieldset border-none rounded-box w-full border p-4">

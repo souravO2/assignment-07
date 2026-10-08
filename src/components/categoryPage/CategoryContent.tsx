@@ -22,8 +22,8 @@ const CategoryContent = async ({
   const firstData = data[0];
   return (
     <div className="container mx-auto p-4">
-      <div className="flex items-center gap-2 bg-white p-4 rounded-2xl">
-        <span className="p-2 rounded-2xl text-4xl">
+      <div className="flex items-center gap-2 bg-white border border-gray-200 p-4 rounded-2xl">
+        <span className="p-2 rounded-2xl text-4xl border border-gray-100">
           {firstData.categoryIcon}
         </span>
         <div>

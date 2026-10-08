@@ -20,7 +20,7 @@ const SortingCategoryData = ({ data }: { data: ProductDetail[] }) => {
 
   return (
     <>
-      <div className="bg-white rounded-2xl flex justify-between items-center px-4 my-4">
+      <div className="bg-white border border-gray-200 rounded-2xl flex justify-between items-center px-4 my-4">
         <p className="m-4">
           মোট {data.length.toLocaleString("bn-BD")}টি পণ্য দেখানো হচ্ছে
         </p>
@@ -35,7 +35,7 @@ const SortingCategoryData = ({ data }: { data: ProductDetail[] }) => {
                   | "priceHighToLow",
               )
             }
-            className="select"
+            className="select rounded-xl"
           >
             <option value={"default"}>ডিফল্ট</option>
             <option value={"priceLowToHigh"}>দাম: কম থেকে বেশি</option>
