@@ -80,19 +80,14 @@ const SignUpPage = () => {
               অ্যাকাউন্ট তৈরি করুন
             </button>
           </fieldset>
-          <p>
-            অ্যাকাউন্ট আছে?{" "}
-            <Link href={"/signin"} className="text-green-700 hover:underline">
-              সাইন ইন করুন
-            </Link>
-          </p>
+          
         </form>
         <div className="flex items-center gap-2">
           <span className="h-px flex-1 bg-slate-300 text-black" />
           <span>অথবা</span>
           <span className="h-px flex-1 bg-slate-300" />
         </div>
-        <div className="flex gap-y-2 gap-2 justify-center">
+        <div className="flex gap-y-2 gap-2 justify-center py-2">
           <button onClick={handleGoogleBtn} className="btn text-center">
             <FcGoogle /> Google
           </button>
@@ -101,6 +96,12 @@ const SignUpPage = () => {
             GitHub
           </button>
         </div>
+        <p className="py-2">
+            অ্যাকাউন্ট আছে?{" "}
+            <Link href={"/signin"} className="text-green-700 hover:underline">
+              সাইন ইন করুন
+            </Link>
+          </p>
       </div>
       <Link href={"/"} className="text-slate-500">
         ← হোম পেজে ফিরে যান

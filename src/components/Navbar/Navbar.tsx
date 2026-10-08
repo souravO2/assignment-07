@@ -4,6 +4,7 @@ import DateDisplay from "./DateDisplay";
 import Link from "next/link";
 import Navlinks from "./Navlinks";
 import Marquee from "./Marquee";
+import LogInButtons from "./LogInButtons";
 
 const Navbar = () => {
   return (
@@ -26,18 +27,7 @@ const Navbar = () => {
           </div>
         </Link>
 
-        <div className="flex shrink-0 gap-1 md:gap-2">
-          <Link href={"/signin"}>
-            <button className="btn btn-sm md:btn-md rounded-xl border-none">
-              সাইন ইন
-            </button>
-          </Link>
-          <Link href={"/signup"}>
-            <button className="btn btn-sm md:btn-md rounded-xl bg-green-700 text-white">
-              সাইন আপ
-            </button>
-          </Link>
-        </div>
+        <LogInButtons />
       </div>
 
       <div>
