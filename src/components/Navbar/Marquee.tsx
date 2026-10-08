@@ -33,7 +33,7 @@ const Marquee = async () => {
         >
           {filteredData.map((item, id) => (
             <span key={id} className="flex">
-              <a href={`/article/${item.id}`} className="">
+              <a href={`/products/${item.id}`}>
                 <div className="flex gap-1">
                   <span>{item.image}</span>
                   <span className="font-medium">{item.nameBn}</span>

@@ -11,11 +11,6 @@ const ProductContent = async ({
   const { id } = await params;
   const res = await fetch(
     `https://api.api-store.workers.dev/api/bazardor/products/${id}`,
-    {
-      next: {
-        revalidate: 3600,
-      },
-    },
   );
   const data: ProductDetail = await res.json();
   if (!data) {

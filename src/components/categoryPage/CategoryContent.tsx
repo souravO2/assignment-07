@@ -11,9 +11,7 @@ const CategoryContent = async ({
   const res = await fetch(
     `https://api.api-store.workers.dev/api/bazardor/products?category=${categoryId}`,
     {
-      next: {
-        revalidate: 3600,
-      },
+      cache: "force-cache",
     },
   );
   const data: ProductDetail[] = await res.json();

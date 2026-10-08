@@ -1,3 +1,4 @@
+import LoadingPage from "@/app/loading";
 import CategoryContent from "@/components/categoryPage/CategoryContent";
 import { Suspense } from "react";
 
@@ -7,7 +8,7 @@ const CategoryPage = ({
   params: Promise<{ categoryId: string }>;
 }) => {
   return (
-    <Suspense fallback={<div>লোড হচ্ছে...</div>}>
+    <Suspense fallback={<LoadingPage />}>
       <CategoryContent params={params} />
     </Suspense>
   );

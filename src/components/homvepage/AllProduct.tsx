@@ -2,22 +2,7 @@ import React from "react";
 import ProductCard from "../shared/ProductCard";
 import { ProductDetail } from "@/types/ProductDetail";
 
-const DataPromise = async () => {
-  try {
-    const res = await fetch(
-      "https://api.abcz.workers.dev/api/bazardor/products",
-      {
-        cache: "force-cache",
-      },
-    );
-    return res.json();
-  } catch (error) {
-    console.log("Error", error);
-  }
-};
-
-const AllProduct = async () => {
-  const data: ProductDetail[] = await DataPromise();
+const AllProduct = ({ data }: { data: ProductDetail[] }) => {
   return (
     <div className="container mx-auto p-2">
       <h1 className="text-2xl font-bold">সব পণ্য</h1>

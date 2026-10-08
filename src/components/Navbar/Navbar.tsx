@@ -15,7 +15,7 @@ const Navbar = () => {
             src="/logo-icon.png"
             width={50}
             height={50}
-            className="shrink-0 rounded-2xl bg-green-700 p-3"
+            className="shrink-0 rounded-2xl bg-green-700/50 p-3"
             alt="Bazardor Logo"
           />
 

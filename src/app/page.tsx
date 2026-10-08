@@ -2,14 +2,27 @@ import AllProduct from "@/components/homvepage/AllProduct";
 import Hero from "@/components/homvepage/Hero";
 import PriceDown from "@/components/homvepage/PriceDown";
 import PriceUp from "@/components/homvepage/PriceUp";
+import { ProductDetail } from "@/types/ProductDetail";
 
-export default function Home() {
+const DataPromise = async () => {
+  try {
+    const res = await fetch(
+      "https://api.abcz.workers.dev/api/bazardor/products",
+    );
+    return res.json();
+  } catch (error) {
+    console.log("Error", error);
+  }
+};
+
+export default async function Home() {
+  const data: ProductDetail[] = await DataPromise();
   return (
     <div>
       <Hero />
-      <PriceUp />
-      <PriceDown />
-      <AllProduct />
+      <PriceUp data={data} />
+      <PriceDown data={data} />
+      <AllProduct data={data} />
     </div>
   );
 }

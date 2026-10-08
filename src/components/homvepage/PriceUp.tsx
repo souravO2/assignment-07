@@ -2,22 +2,7 @@ import { ProductDetail } from "@/types/ProductDetail";
 import React from "react";
 import ProductCard from "../shared/ProductCard";
 
-const DataPromise = async () => {
-  try {
-    const res = await fetch(
-      "https://api.abcz.workers.dev/api/bazardor/products",
-      {
-        cache: "force-cache",
-      },
-    );
-    return res.json();
-  } catch (error) {
-    console.log("Error", error);
-  }
-};
-
-const PriceUp = async () => {
-  const data: ProductDetail[] = await DataPromise();
+const PriceUp = ({ data }: { data: ProductDetail[] }) => {
   const priceUp: ProductDetail[] = data.filter(
     (item) => item.change.dir === "up",
   );
