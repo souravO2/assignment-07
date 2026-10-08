@@ -3,6 +3,7 @@
 import { signOut, useSession } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RxAvatar } from "react-icons/rx";
 
@@ -15,6 +16,9 @@ const LogInButtons = () => {
       </div>
     );
   }
+  const handleSignOutBtn = async () => {
+    (await signOut(), redirect("/"));
+  };
   return (
     <div className="flex flex-col md:flex-row shrink-0 text-right gap-1 md:gap-2">
       {session?.user ? (
@@ -41,7 +45,7 @@ const LogInButtons = () => {
               <Link href={"/profile"}>👤 আমার প্রোফাইল</Link>
             </li>
             <li>
-              <button onClick={() => signOut()} className="text-red-700">
+              <button onClick={handleSignOutBtn} className="text-red-700">
                 ↩ সাইন আউট
               </button>
             </li>

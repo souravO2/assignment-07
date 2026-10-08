@@ -2,6 +2,7 @@ import AllProduct from "@/components/homvepage/AllProduct";
 import Hero from "@/components/homvepage/Hero";
 import PriceDown from "@/components/homvepage/PriceDown";
 import PriceUp from "@/components/homvepage/PriceUp";
+import BackToTop from "@/components/shared/BackToTop";
 import { ProductDetail } from "@/types/ProductDetail";
 
 const DataPromise = async () => {
@@ -23,6 +24,7 @@ export default async function Home() {
       <PriceUp data={data} />
       <PriceDown data={data} />
       <AllProduct data={data} />
+      <BackToTop />
     </div>
   );
 }

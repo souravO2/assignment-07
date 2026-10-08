@@ -2,6 +2,7 @@
 
 import { signOut, updateUser, useSession } from "@/lib/auth-client";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import React from "react";
 import { RxAvatar } from "react-icons/rx";
 
@@ -24,6 +25,9 @@ const ProfilePage = () => {
     });
     return resData;
   };
+  const handleSignOutBtn = async () => {
+    (await signOut(), redirect("/"));
+  };
   return (
     <div className="max-w-4xl mx-auto w-full m-4 flex flex-col gap-y-4">
       <div className="my-4 mx-2">
@@ -41,7 +45,7 @@ const ProfilePage = () => {
               className="rounded-2xl"
             />
           ) : (
-            <RxAvatar className="w-16 h-16"/>
+            <RxAvatar className="w-16 h-16" />
           )}
           <div>
             <h1 className="text-xl font-semibold">{data?.user.name}</h1>
@@ -50,7 +54,7 @@ const ProfilePage = () => {
         </div>
         <div>
           <button
-            onClick={() => signOut()}
+            onClick={handleSignOutBtn}
             className="btn border-none text-red-700"
           >
             ↩ সাইন আউট
