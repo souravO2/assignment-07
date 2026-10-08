@@ -56,9 +56,9 @@ const ProductDetailCard = ({ data }: { data: ProductDetail }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-y-4 rounded-2xl border border-gray-100 bg-white p-4 shadow-xl mx-2 md:mx-0">
-        <h1 className="text-xl font-semibold">দামের সারসংক্ষেপ</h1>
-        <div className="flex justify-between gap-4 text-center">
+      <div className="flex flex-col gap-y-4 rounded-2xl border border-gray-100 bg-white py-2 px-1 md:p-4 shadow-xl mx-1 md:mx-0 text-center md:text-left">
+        <h1 className="text-xl font-semibold mt-2">দামের সারসংক্ষেপ</h1>
+        <div className="flex justify-between gap-2 md:gap-4 text-center">
           <div className="border rounded-2xl border-gray-200 w-full p-4">
             <p>সর্বনিম্ন দাম</p>
             <h1 className="text-green-700 text-2xl font-bold">
@@ -112,8 +112,10 @@ const ProductDetailCard = ({ data }: { data: ProductDetail }) => {
               </tr>
               {data.markets.map((item, id) => (
                 <tr key={id} className="odd:bg-green-50 even:bg-white">
-                  <td className="font-semibold px-2">{item.market}</td>
-                  <td>{item.division}</td>
+                  <td className="font-semibold px-2 text-left">
+                    {item.market}
+                  </td>
+                  <td className="text-left">{item.division}</td>
                   <td className="px-2 py-3.5 text-right text-lg">
                     {item.min.toLocaleString("bn-BD")} টাকা
                   </td>
