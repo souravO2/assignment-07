@@ -71,12 +71,11 @@ const SignInPage = () => {
               সাইন ইন
             </button>
           </fieldset>
-          
         </form>
         <div className="flex items-center gap-2">
-          <span className="h-px flex-1 bg-slate-300 text-black"/>
+          <span className="h-px flex-1 bg-slate-300 text-black" />
           <span>অথবা</span>
-          <span className="h-px flex-1 bg-slate-300"/>
+          <span className="h-px flex-1 bg-slate-300" />
         </div>
         <div className="flex gap-y-2 gap-2 justify-center py-2">
           <button onClick={handleGoogleBtn} className="btn text-center">
@@ -88,13 +87,15 @@ const SignInPage = () => {
           </button>
         </div>
         <p className="py-2">
-            অ্যাকাউন্ট নেই?{" "}
-            <Link href={"/signup"} className="text-green-700 hover:underline">
-              সাইন আপ করুন
-            </Link>
-          </p>
+          অ্যাকাউন্ট নেই?{" "}
+          <Link href={"/signup"} className="text-green-700 hover:underline">
+            সাইন আপ করুন
+          </Link>
+        </p>
       </div>
-      <Link href={"/"} className="text-slate-500">← হোম পেজে ফিরে যান</Link>
+      <Link href={"/"} className="text-slate-500">
+        ← হোম পেজে ফিরে যান
+      </Link>
     </div>
   );
 };

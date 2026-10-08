@@ -1,6 +1,7 @@
 "use client";
 
 import { signOut, useSession } from "@/lib/auth-client";
+import Image from "next/image";
 import Link from "next/link";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RxAvatar } from "react-icons/rx";
@@ -19,7 +20,17 @@ const LogInButtons = () => {
       {session?.user ? (
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn m-1 border-none">
-            <RxAvatar className="w-6 h-6" />{" "}
+            {session.user.image ? (
+              <Image
+                src={session.user.image}
+                width={24}
+                height={24}
+                alt="user profile"
+                className="rounded-full"
+              />
+            ) : (
+              <RxAvatar className="w-6 h-6" />
+            )}
             {session?.user.name.split(" ").slice(0, 1)} <RiArrowDropDownLine />
           </div>
           <ul

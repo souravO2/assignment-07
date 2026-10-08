@@ -25,7 +25,7 @@ const ProfilePage = () => {
     return resData;
   };
   return (
-    <div className="max-w-5xl mx-auto w-full m-4 flex flex-col gap-y-4">
+    <div className="max-w-4xl mx-auto w-full m-4 flex flex-col gap-y-4">
       <div className="my-4 mx-2">
         <h1 className="text-2xl font-bold">আমার প্রোফাইল</h1>
         <p>আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।</p>
@@ -41,7 +41,7 @@ const ProfilePage = () => {
               className="rounded-2xl"
             />
           ) : (
-            <RxAvatar />
+            <RxAvatar className="w-16 h-16"/>
           )}
           <div>
             <h1 className="text-xl font-semibold">{data?.user.name}</h1>

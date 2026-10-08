@@ -1,7 +1,8 @@
 "use client";
 
-import { signIn } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -13,13 +14,16 @@ const SignUpPage = () => {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
     // console.log(data);
-    const { data: resData, error } = await signIn.email({
+    const { data: resData, error } = await signUp.email({
+      name: data.name as string,
       email: data.email as string,
       password: data.password as string,
-      rememberMe: true,
-      callbackURL: "/",
+      callbackURL: "/signin",
     });
-    console.log(resData, error);
+    // console.log(resData, error);
+    if (data) {
+      redirect("/signin");
+    }
     if (error) {
       toast.error(error.message);
     }
@@ -80,7 +84,6 @@ const SignUpPage = () => {
               অ্যাকাউন্ট তৈরি করুন
             </button>
           </fieldset>
-          
         </form>
         <div className="flex items-center gap-2">
           <span className="h-px flex-1 bg-slate-300 text-black" />
@@ -97,11 +100,11 @@ const SignUpPage = () => {
           </button>
         </div>
         <p className="py-2">
-            অ্যাকাউন্ট আছে?{" "}
-            <Link href={"/signin"} className="text-green-700 hover:underline">
-              সাইন ইন করুন
-            </Link>
-          </p>
+          অ্যাকাউন্ট আছে?{" "}
+          <Link href={"/signin"} className="text-green-700 hover:underline">
+            সাইন ইন করুন
+          </Link>
+        </p>
       </div>
       <Link href={"/"} className="text-slate-500">
         ← হোম পেজে ফিরে যান
