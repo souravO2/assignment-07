@@ -16,7 +16,7 @@ const ProductCard = ({ data }: { data: ProductDetail }) => {
           <h1 className="text-xl font-semibold group-hover:text-green-700">
             {data.nameBn}
           </h1>
-          <span>প্রতি কেজি</span>
+          <span>প্রতি {data.unit}</span>
         </div>
       </div>
       <div className="flex justify-between items-center">

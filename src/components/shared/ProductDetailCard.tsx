@@ -18,7 +18,7 @@ const ProductDetailCard = ({ data }: { data: ProductDetail }) => {
           </span>
           <div>
             <h1 className="text-4xl font-semibold">{data.nameBn}</h1>
-            <span>প্রতি কেজি • {data.categoryNameBn}</span>
+            <span>প্রতি {data.unit} • {data.categoryNameBn}</span>
             <span className="text-xl font-semibold">
               {data.change.dir === "up" ? (
                 <h2>
@@ -41,7 +41,7 @@ const ProductDetailCard = ({ data }: { data: ProductDetail }) => {
           <h1 className="text-2xl font-bold">
             {data.today.toLocaleString("bn-BD")}
           </h1>
-          <span className="font-normal">টাকা / কেজি</span>
+          <span className="font-normal">টাকা / {data.unit}</span>
           <div>
             {data.change.dir === "up" ? (
               <span className="px-4 py-2 text-sm font-semibold text-red-700">

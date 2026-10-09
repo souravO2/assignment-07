@@ -34,7 +34,7 @@ const Marquee = async () => {
                 <div className="flex gap-1">
                   <span>{item.image}</span>
                   <span className="font-medium">{item.nameBn}</span>
-                  <span>{item.today.toLocaleString("bn-BD")} টাকা/কেজি</span>
+                  <span>{item.today.toLocaleString("bn-BD")} টাকা/{item.unit}</span>
                   {item.change.dir === "up" ? (
                     <span className="text-red-700">
                       🔺{item.change.pct.toLocaleString("bn-BD")}%
