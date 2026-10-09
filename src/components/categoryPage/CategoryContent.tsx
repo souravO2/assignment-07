@@ -10,12 +10,10 @@ const CategoryContent = async ({
   const { categoryId } = await params;
   const res = await fetch(
     `https://api.api-store.workers.dev/api/bazardor/products?category=${categoryId}`,
-    {
-      cache: "force-cache",
-    },
+    { cache: "no-store" },
   );
   const data: ProductDetail[] = await res.json();
-  console.log(data);
+  // console.log(data);
   if (!data) {
     notFound();
   }

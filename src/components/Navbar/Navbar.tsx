@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
 import DateDisplay from "./DateDisplay";
 import Link from "next/link";
 import Navlinks from "./Navlinks";
@@ -31,8 +31,10 @@ const Navbar = () => {
       </div>
 
       <div>
-        <Navlinks />
-        <Marquee />
+        <Suspense>
+          <Navlinks />
+          <Marquee />
+        </Suspense>
       </div>
     </nav>
   );

@@ -2,14 +2,11 @@ import { ProductDetail } from "@/types/ProductDetail";
 import React from "react";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
-
 const DataPromise = async () => {
   try {
     const res = await fetch(
       "https://api.abcz.workers.dev/api/bazardor/products",
-      {
-        cache: "force-cache",
-      },
+      { cache: "no-store" },
     );
     return res.json();
   } catch (error) {

@@ -9,6 +9,7 @@ const DataPromise = async () => {
   try {
     const res = await fetch(
       "https://api.abcz.workers.dev/api/bazardor/products",
+      { cache: "no-store" },
     );
     return res.json();
   } catch (error) {
