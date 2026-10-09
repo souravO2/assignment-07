@@ -6,13 +6,15 @@ import { redirect } from "next/navigation";
 import React from "react";
 import { RxAvatar } from "react-icons/rx";
 import { toast } from "sonner";
+import LoadingPage from "../loading";
 
 const ProfilePage = () => {
   const { data, isPending } = useSession();
   if (isPending) {
     return (
       <div className="flex flex-col items-center gap-2">
-        <span>Loading...</span>
+        {/* <span>Loading...</span> */}
+        <LoadingPage />
       </div>
     );
   }
