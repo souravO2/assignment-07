@@ -26,6 +26,7 @@ const ProfilePage = () => {
     const resData = await updateUser({
       name: userData.name as string,
     });
+    toast.success(`Successfully name updated.`)
     return resData;
   };
   const handleSignOutBtn = async () => {
