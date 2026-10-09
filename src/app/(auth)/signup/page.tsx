@@ -21,26 +21,24 @@ const SignUpPage = () => {
       callbackURL: "/",
     });
     // console.log(resData, error);
+    if (error) {
+      toast.error(error.message);
+    }
     toast.success("Account Created.");
     if (data) {
       redirect("/");
     }
-    if (error) {
-      toast.error(error.message);
-    }
   };
 
   const handleGoogleBtn = async () => {
-    const res = await signIn.social({
+    await signIn.social({
       provider: "google",
     });
-    return res;
   };
   const handleGitHubBtn = async () => {
-    const res = await signIn.social({
+    await signIn.social({
       provider: "github",
     });
-    return res;
   };
   return (
     <div className="flex flex-col justify-center items-center text-center m-4">

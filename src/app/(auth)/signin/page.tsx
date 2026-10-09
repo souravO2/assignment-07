@@ -20,23 +20,21 @@ const SignInPage = () => {
       callbackURL: "/",
     });
     // console.log(resData, error);
-    toast.success("Successfully Logged In.");
     if (error) {
       toast.error(error.message);
     }
+    toast.success("Successfully Logged In.");
   };
 
   const handleGoogleBtn = async () => {
-    const res = await signIn.social({
+    await signIn.social({
       provider: "google",
     });
-    return res;
   };
   const handleGitHubBtn = async () => {
-    const res = await signIn.social({
+    await signIn.social({
       provider: "github",
     });
-    return res;
   };
   return (
     <div className="flex flex-col justify-center items-center text-center m-4">
