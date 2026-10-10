@@ -14,7 +14,7 @@ const CategoryContent = async ({
   );
   const data: ProductDetail[] = await res.json();
   // console.log(data);
-  if (!data) {
+  if (!data || data.length === 0) {
     notFound();
   }
   const firstData = data[0];
