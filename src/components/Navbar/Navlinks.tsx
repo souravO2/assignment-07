@@ -3,7 +3,7 @@ import NavItems from "./NavItems";
 const DataPromise = async () => {
   try {
     const res = await fetch(
-      "https://api.api-store.workers.dev/api/bazardor/categories",
+      "https://openapi.programming-hero.com/api/bazardor/categories",
       { cache: "no-store" },
     );
     return res.json();

@@ -9,7 +9,7 @@ const CategoryContent = async ({
 }) => {
   const { categoryId } = await params;
   const res = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/products?category=${categoryId}`,
+    `https://openapi.programming-hero.com/api/bazardor/products?category=${categoryId}`,
     { cache: "no-store" },
   );
   const data: ProductDetail[] = await res.json();
