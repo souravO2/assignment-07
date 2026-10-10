@@ -1,4 +1,5 @@
 import { ProductDetail } from "@/types/ProductDetail";
+import Link from "next/link";
 import React from "react";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
@@ -30,11 +31,13 @@ const Marquee = async () => {
         >
           {filteredData.map((item, id) => (
             <span key={id} className="flex">
-              <a href={`/products/${item.id}`}>
+              <Link href={`/products/${item.id}`}>
                 <div className="flex gap-1">
                   <span>{item.image}</span>
                   <span className="font-medium">{item.nameBn}</span>
-                  <span>{item.today.toLocaleString("bn-BD")} টাকা/{item.unit}</span>
+                  <span>
+                    {item.today.toLocaleString("bn-BD")} টাকা/{item.unit}
+                  </span>
                   {item.change.dir === "up" ? (
                     <span className="text-red-700">
                       🔺{item.change.pct.toLocaleString("bn-BD")}%
@@ -45,7 +48,7 @@ const Marquee = async () => {
                     </span>
                   )}
                 </div>
-              </a>
+              </Link>
               <span className="mx-4">•</span>
             </span>
           ))}
